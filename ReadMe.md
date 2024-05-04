@@ -1,4 +1,4 @@
-### Laundry Management System using HTML ,CSS ,Javascript, FastAPI(Python) and PostgreSQL.
+### Laundry Management System using HTML ,CSS ,Javascript, FastAPI and PostgreSQL.
 
 ## Introduction:
 Welcome to my project! This ReadME will guide you through the setup and usage of this application. 
