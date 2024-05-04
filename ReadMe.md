@@ -1,10 +1,10 @@
-### Laundry Management System using Flutter(dart), FastAPI(Python) and PostgreSQL.
+### Laundry Management System using HTML ,CSS ,Javascript, FastAPI(Python) and PostgreSQL.
 
 ## Introduction:
 Welcome to my project! This ReadME will guide you through the setup and usage of this application. 
 
 ## Technologies Used:
-Frontend: Flutter(dart),
+Frontend: HTML ,CSS ,Javascript,
 Backend: FastAPI(Python),
 Database: PostgreSQL.
 
