@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional CSS styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin-bottom: 0;
+        }
+
+        .user-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        .order-id {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .detail {
+            margin-bottom: 10px;
+        }
+
+        .back-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .icon {
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Order Details</h1>
+            <div class="user-icon">👤</div>
+        </div>
+
+        <div class="order-id">Order ID: 123</div>
+
+        <div class="section">
+            <div class="section-title">
+                <span>Contact Details</span>
+                <div class="icon">📞</div>
+            </div>
+            <div class="detail">Name: John Doe</div>
+            <div class="detail">Phone: +1 234 567 8901</div>
+            <div class="detail">Address: 123 Main Street, City</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <span>Number of Articles</span>
+                <div class="icon">🛍️</div>
+            </div>
+            <div class="detail">Jeans: 2</div>
+            <div class="detail">Skirt: 3</div>
+            <div class="detail">Saree: 1</div>
+            <div class="detail">Dress: 2</div>
+            <!-- Add more details as needed -->
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <span>Order Time</span>
+                <div class="icon">⏰</div>
+            </div>
+            <div class="detail">Date: January 1, 2025</div>
+            <div class="detail">Time: 10:00 AM</div>
+        </div>
+
+        <div class="back-container">
+            <a href="availability.html" class="back-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Laundrix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional CSS styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e4f1d9;
+            /*background: linear-gradient(to right, #6c804b, #728e65);*/
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4caf8c;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .payment-option {
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .payment-option img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .payment-option.selected {
+            border: 2px solid #4caf8c;
+            padding:10px;
+        }
+
+        input {
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4caf8c;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #54be98;
+        }
+
+        footer {
+            background-color: #4caf8c;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Checkout</h1>
+    </header>
+    <main>
+        <div class="payment-option" id="upiOption">
+            <img src="upi_icon.png" alt="UPI Icon">
+            <p>UPI</p>
+            <input type="text" id="upiInput" placeholder="Enter UPI ID" style="display: none;">
+        </div>
+        <div class="payment-option" id="netBankingOption">
+            <img src="net_b_icon.png" alt="Net Banking Icon">
+            <p>Net Banking</p>
+            <input type="text" id="netBankingInput" placeholder="Enter Bank Name" style="display: none;">
+        </div>
+        <div class="payment-option" id="codOption">
+            <img src="cod_icon.png" alt="COD Icon">
+            <p>Cash on Delivery (COD)</p>
+        </div>
+        <!-- Add more payment options as needed -->
+        <button id="confirmBtn">Confirm Payment</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Laundrix</p>
+    </footer>
+
+    <script>
+        // Get payment option elements
+        const upiOption = document.getElementById("upiOption");
+        const netBankingOption = document.getElementById("netBankingOption");
+        const codOption = document.getElementById("codOption");
+
+        // Get input elements
+        const upiInput = document.getElementById("upiInput");
+        const netBankingInput = document.getElementById("netBankingInput");
+
+        // Event listener for UPI option
+        upiOption.addEventListener("click", () => {
+            upiOption.classList.add("selected");
+            netBankingOption.classList.remove("selected");
+            codOption.classList.remove("selected");
+            upiInput.style.display = "block";
+            netBankingInput.style.display = "none";
+        });
+
+        // Event listener for Net Banking option
+        netBankingOption.addEventListener("click", () => {
+            upiOption.classList.remove("selected");
+            netBankingOption.classList.add("selected");
+            codOption.classList.remove("selected");
+            upiInput.style.display = "none";
+            netBankingInput.style.display = "block";
+        });
+
+        // Event listener for COD option
+        codOption.addEventListener("click", () => {
+            upiOption.classList.remove("selected");
+            netBankingOption.classList.remove("selected");
+            codOption.classList.add("selected");
+            upiInput.style.display = "none";
+            netBankingInput.style.display = "none";
+        });
+
+        // Event listener for confirm button
+        document.getElementById("confirmBtn").addEventListener("click", () => {
+            // Redirect to confirmation.html
+            window.location.href = "confirmation.html";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundrix - Laundry Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            /* background-image: url('./details.png');
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%; */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4caf8c;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .item-info {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .button-group {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color:#4caf8c;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color:#59db91;
+        }
+
+        footer {
+            background-color: #4caf8c;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        #selectedItems {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #selectedItems ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #selectedItems ul li {
+            margin-bottom: 10px;
+        }
+
+        #totalPrice {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #checkoutBtn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Laundrix</h1>
+    </header>
+    <main>
+        <div class="item">
+            <!-- Laundry service options -->
+            <div class="item-info">
+                <h2>Laundry Service Options</h2>
+                <label for="clothesType">Select Clothes Type:</label>
+                <select id="clothesType">
+                    <option value="shirt">Shirt - $10</option>
+                    <option value="dress">Dress - $15</option>
+                    <option value="skirt">Skirt - $10</option>
+                    <option value="jeans">Jeans - $9</option>
+                    <option value="jacket">Jacket - $30</option>
+                </select>
+            </div>
+            <div class="item-info">
+                <label for="quantity">Quantity:</label>
+                <div class="button-group">
+                    <button id="decrementBtn">-</button>
+                    <input type="text" id="quantity" value="0" readonly>
+                    <button id="incrementBtn">+</button>
+                </div>
+            </div>
+            <div class="item-info">
+                <label for="totalPrice">Total Price:</label>
+                <div id="totalPrice">$0</div>
+            </div>
+        </div>
+        <div id="selectedItems">
+            <h2>Selected Items:</h2>
+            <ul id="selectedItemsList"></ul>
+        </div>
+        <button id="checkoutBtn">Proceed to Checkout</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Laundrix</p>
+    </footer>
+
+    <script>
+        const clothesTypeSelect = document.getElementById("clothesType");
+        const quantityInput = document.getElementById("quantity");
+        const decrementBtn = document.getElementById("decrementBtn");
+        const incrementBtn = document.getElementById("incrementBtn");
+        const totalPriceDisplay = document.getElementById("totalPrice");
+        const selectedItemsList = document.getElementById("selectedItemsList");
+        const checkoutBtn = document.getElementById("checkoutBtn");
+
+        let priceMap = {
+            shirt: 10,
+            dress: 15,
+            skirt: 10,
+            jeans: 9,
+            jacket: 30
+        };
+
+        let selectedItems = {};
+
+        function updateTotalPrice() {
+            const selectedClothesType = clothesTypeSelect.value;
+            const quantity = parseInt(quantityInput.value);
+            const price = priceMap[selectedClothesType] * quantity;
+            totalPriceDisplay.textContent = "$" + price.toFixed(2);
+
+            if (quantity > 0) {
+                selectedItems[selectedClothesType] = quantity;
+            } else {
+                delete selectedItems[selectedClothesType];
+            }
+            renderSelectedItems();
+        }
+
+        function renderSelectedItems() {
+            selectedItemsList.innerHTML = "";
+            let totalPrice = 0;
+            for (const item in selectedItems) {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${item}: ${selectedItems[item]} (Price: $${(selectedItems[item] * priceMap[item]).toFixed(2)})`;
+                selectedItemsList.appendChild(listItem);
+                totalPrice += selectedItems[item] * priceMap[item];
+            }
+            totalPriceDisplay.textContent = "$" + totalPrice.toFixed(2);
+        }
+
+        decrementBtn.addEventListener("click", () => {
+            if (parseInt(quantityInput.value) > 0) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+                updateTotalPrice();
+            }
+        });
+
+        incrementBtn.addEventListener("click", () => {
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            updateTotalPrice();
+        });
+
+        clothesTypeSelect.addEventListener("change", () => {
+            updateTotalPrice();
+        });
+
+        checkoutBtn.addEventListener("click", () => {
+            const selectedClothesType = clothesTypeSelect.value;
+            const quantity = parseInt(quantityInput.value);
+            const price = priceMap[selectedClothesType] * quantity;
+
+            const token = localStorage.getItem('token');
+
+            fetch('http://127.0.0.1:8000/order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify({
+                    shop_id: 1, 
+                    quantity: quantity,
+                    washing_type: 'wash', 
+                    price: price
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                window.location.href = "checkout.html";
+            })
+            .catch(error => {
+                console.error('Error placing order:', error);
+            });
+        });
+    </script>
+</body>
+</html>

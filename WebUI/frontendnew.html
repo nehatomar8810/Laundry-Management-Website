@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundrix</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Use sans-serif font */
+      font-size: 18px; /* Slightly larger font size */
+      font-weight: 600; /* Enhanced font weight */
+    }
+    .navbar {
+      background-color: #f0f0f0; /* Same color theme as the header */
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: black;
+      margin-right: 20px;
+      padding: 10px;
+      font-size: 20px; /* Larger font size */
+      font-weight: normal; /* Normal font weight */
+      font-style: normal; /* Normal font style */
+    }
+    .navbar a:not(:last-child) {
+      border-right: 1px solid #ccc; /* Add vertical line between links */
+      padding-right: 10px; /* Add space between line and text */
+    }
+    .search-bar {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .search-bar input[type="text"] {
+      width: 400px;
+      padding: 10px;
+      font-size: 18px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+    }
+    .search-bar input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .hero-image {
+      width: 100%;
+      height: 400px; /* Adjust the height as needed */
+      object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    }
+    .hero-text {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .popular-stores-container {
+      width: 100%;
+      height: 300px; /* Adjust the height as needed */
+      overflow-x: auto; /* Enable horizontal scrolling */
+      white-space: nowrap; /* Prevent wrapping of store images */
+    }
+    .popular-stores {
+      display: inline-block;
+      width: auto; /* Adjust width to fit all images */
+      white-space: nowrap;
+    }
+    .store {
+      display: inline-block;
+      margin: 20px;
+      vertical-align: top;
+      width: 200px; /* Adjust store image width */
+    }
+    .store img {
+      width: 100%; /* Make the image fill the entire width of the store */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .icon-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      width: 100%; /* Ensure the icons cover the full width */
+    }
+    .icon-container img {
+      width: auto; /* Adjust icon width */
+      height: 50px; /* Adjust icon height */
+    }
+    h1 {
+      font-family: 'Brush Script MT', cursive; /* Use Brush Script font */
+      font-size: 48px; /* Increase font size */
+      text-align: center; /* Center align the heading */
+    }
+    .bottom-navbar {
+      background-color: #f0f0f0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+    .bottom-navbar a {
+      text-decoration: none;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 16px; /* Adjust font size */
+    }
+    .bottom-navbar a img {
+      width: 40px; /* Adjust icon width */
+      height: auto; /* Maintain aspect ratio */
+    }
+    .book-appointment-btn {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-bottom: 20px; /* Add margin to separate from the hero image */
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="aboutus.html">About Us</a>
+    <a href="contacts.html">Contact Us</a>
+    <a href="#">Rate Us</a> 
+  </div>
+
+  <h1>Welcome to Laundrix</h1>
+
+  <div class="search-bar">
+    <form>
+      <input type="text" placeholder="Search services, clothes, stores">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+  
+  <img class="hero-image" src="./8.jpg" alt="Hero Image">
+  
+  <!-- Book Appointment button -->
+  <a href="shop-selection.html">
+    <button class="book-appointment-btn">Book Appointment</button>
+  </a>
+  
+  <div class="hero-text">
+    <h2>Our More Outlets</h2>
+  </div>
+
+  <div class="popular-stores-container">
+    <div class="popular-stores">
+      <div class="store">
+        <img src="./14.jpg" alt="Store 1">
+      </div>
+      <div class="store">
+        <img src="./6.jpg" alt="Store 2">
+      </div>
+      <div class="store">
+        <img src="./13.jpg" alt="Store 3">
+      </div>
+      <div class="store">
+        <img src="./10.jpg" alt="Store 4">
+      </div>
+      <div class="store">
+        <img src="./2.jpg" alt="Store 5">
+      </div>
+      <div class="store">
+        <img src="./3.png" alt="Store 6">
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-navbar">
+    <a href="#">
+      <img src="./15.png" alt="Home">
+      Home
+    </a>
+    <a href="#">
+      <img src="./16.png" alt="Search">
+      Search
+    </a>
+    <a href="#">
+      <img src="./18.png" alt="Offers">
+      Offers
+    </a>
+    <a href="#">
+      <img src="./1.png" alt="Orders">
+      Orders
+    </a>
+  </div>
+</body>
+</html>

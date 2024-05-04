@@ -1,0 +1,99 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('washing_machine.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.title {
+  font-size: 48px; /* Increased font size for the title */
+}
+
+main {
+  padding: 20px;
+}
+
+#userSelection {
+  text-align: center;
+}
+
+#userOptions {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#customerBtn {
+  background-color: #1abc9c; /* Bright color for the customer button */
+  color: #fff;
+}
+
+#serviceProviderBtn {
+  background-color: #3498db; /* Bright color for the service provider button */
+  color: #fff;
+}
+
+button:hover {
+  filter: brightness(110%); /* Increase brightness on hover */
+}
+
+.userTypeText {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px 0;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+article {
+  position: relative;
+  width: 100%;
+}
+
+.contact-details {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  padding: 20px;
+}

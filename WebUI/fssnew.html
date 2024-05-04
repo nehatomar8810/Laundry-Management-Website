@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundrix</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url('C:\Users\hplap\OneDrive\Desktop\code\Untitled design (8).png'); /* Set background image */
+      background-size: cover; /* Cover the entire viewport */
+      background-position: center; /* Center the background image */
+      font-family: serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 50px;
+    }
+    .logo {
+      margin-bottom: 40px; /* Increase margin */
+      text-align: center;
+    }
+    .logo img {
+      width: 300px; /* Increase icon size */
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .options button {
+      margin: 10px;
+      padding: 20px 40px;
+      width: 300px;
+      background-color: #777;
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 24px;
+    }
+    .options button:hover {
+      background-color: #555;
+    }
+    .or {
+      margin: 20px 0;
+      font-size: 24px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="C:\Users\hplap\OneDrive\Desktop\code\shehacks\19.png"alt="Laundrix Logo" width="200">
+  </div>
+  <div class="options">
+    <button onclick="window.location.href='customer.html'">Customer</button>
+    <span class="or">OR</span>
+    <button onclick="window.location.href='service_provider.html'">Service Provider</button>
+  </div>
+</body>
+</html>

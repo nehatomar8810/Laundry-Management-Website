@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Confirmation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional CSS styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e4f1d9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            animation: bounceIn 0.8s ease forwards;
+        }
+
+        .icon {
+            font-size: 100px;
+            color: #4CAF50; /* Green */
+            opacity: 10;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+            animation: slideInDown 1s ease forwards;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #555;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .emoji {
+            font-size: 40px;
+            margin-top: 20px;
+            animation: pulse 1s infinite alternate;
+        }
+
+        .rating-container {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .star {
+            font-size: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .star:hover {
+            transform: scale(1.2);
+        }
+
+        .selected {
+            color: #FFD700; /* Gold */
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.1);
+            }
+            60% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="icon-container">
+        <div class="icon">&#10004;</div>
+    </div>
+    <h1>Checkout Successful!</h1>
+    <p>Thank you for your order.</p>
+    <div class="emoji">😊🎉👍</div>
+
+    <div class="rating-container">
+        <span class="star" onclick="setRating(1)">★</span>
+        <span class="star" onclick="setRating(2)">★</span>
+        <span class="star" onclick="setRating(3)">★</span>
+        <span class="star" onclick="setRating(4)">★</span>
+        <span class="star" onclick="setRating(5)">★</span>
+    </div>
+
+    <p id="experience"></p>
+    <a href="frontendnew.html">Go Back to HomePage</a>
+    <script>
+        let selectedRating = 0;
+
+        function setRating(rating) {
+            selectedRating = rating;
+            updateStars();
+            updateExperience();
+        }
+
+        function updateStars() {
+            const stars = document.querySelectorAll('.star');
+            stars.forEach((star, index) => {
+                if (index < selectedRating) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+
+        function updateExperience() {
+            const experienceText = document.getElementById('experience');
+            switch (selectedRating) {
+                case 1:
+                    experienceText.textContent = "Worst Experience 😞";
+                    break;
+                case 2:
+                    experienceText.textContent = "Not Good 😕";
+                    break;
+                case 3:
+                    experienceText.textContent = "Average 🙂";
+                    break;
+                case 4:
+                    experienceText.textContent = "Good 😊";
+                    break;
+                case 5:
+                    experienceText.textContent = "Best Experience! 😃";
+                    break;
+                default:
+                    experienceText.textContent = "";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Orders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional CSS styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 0;
+            font-size: 36px;
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin-bottom: 0;
+        }
+
+        .user-icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        .service-provider {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #aa3b19ce;
+        }
+
+        .order {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+
+        .order-id {
+            font-weight: bold;
+            margin-bottom: 5px;
+            cursor: pointer;
+            text-decoration: none; 
+            color: #333; 
+        }
+
+        .address {
+            margin-bottom: 10px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .accept {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .reject {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .service-section {
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .tick {
+            color: #4CAF50;
+            margin-right: 5px;
+        }
+
+        .cross {
+            color: #f44336;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Available Orders</h1>
+        <div class="user-icon">👤</div>
+    </div>
+
+    <div class="service-provider">Service Provider Name</div>
+    
+    <div class="service-section">
+        <div class="service-title">Washing</div>
+        <div class="order">
+            <a href="orders.html" class="order-id">Order ID: 123</a>
+            <div class="address">Address: 123 Main Street</div>
+            <div class="actions">
+                <button class="accept" onclick="acceptOrder(this)">Accept</button>
+                <button class="reject" onclick="rejectOrder(this)">Reject</button>
+            </div>
+        </div>
+        <div class="order">
+            <a href="./orders.html" class="order-id">Order ID: 124</a>
+            <div class="address">Address: 456 Elm Street</div>
+            <div class="actions">
+                <button class="accept" onclick="acceptOrder(this)">Accept</button>
+                <button class="reject" onclick="rejectOrder(this)">Reject</button>
+            </div>
+        </div>
+        <div class="order">
+            <a href="./orders.html" class="order-id">Order ID: 125</a>
+            <div class="address">Address: 789 Oak Avenue</div>
+            <div class="actions">
+                <button class="accept" onclick="acceptOrder(this)">Accept</button>
+                <button class="reject" onclick="rejectOrder(this)">Reject</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="service-section">
+        <div class="service-title">Ironing</div>
+        <div class="order">
+            <a href="./orders.html" class="order-id">Order ID: 126</a>
+            <div class="address">Address: 101 Pine Street</div>
+            <div class="actions">
+                <button class="accept" onclick="acceptOrder(this)">Accept</button>
+                <button class="reject" onclick="rejectOrder(this)">Reject</button>
+            </div>
+        </div>
+        <div class="order">
+            <a href="./orders.html" class="order-id">Order ID: 127</a>
+            <div class="address">Address: 202 Maple Avenue</div>
+            <div class="actions">
+                <button class="accept" onclick="acceptOrder(this)">Accept</button>
+                <button class="reject" onclick="rejectOrder(this)">Reject</button>
+            </div>
+        </div>
+        <div class="order">
+            <a href="./orders.html" class="order-id">Order ID: 128</a>
+            <div class="address">Address: 303 Oak Drive</div>
+            <div class="actions">
+                <button class="accept" onclick="acceptOrder(this)">Accept</button>
+                <button class="reject" onclick="rejectOrder(this)">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-section">
+        <div class="service-title">Dry Cleaning</div>
+        <div class="order">
+            <a href="./orders.html" class="order-id">Order ID: 129</a>
+            <div class="address">Address: 404 Elm Avenue</div>
+            <div class="actions">
+                <button class="accept" onclick="acceptOrder(this)">Accept</button>
+                <button class="reject" onclick="rejectOrder(this)">Reject</button>
+            </div>
+        </div>
+        <div class="order">
+            <a href="orders.html" class="order-id">Order ID: 130</a>
+            <div class="address">Address: 505 Pine Drive</div>
+            <div class="actions">
+                <button class="accept" onclick="acceptOrder(this)">Accept</button>
+                <button class="reject" onclick="rejectOrder(this)">Reject</button>
+            </div>
+        </div>
+        <div class="order">
+            <a href="./orders.html" class="order-id">Order ID: 131</a>
+            <div class="address">Address: 606 Maple Court</div>
+            <div class="actions">
+                <button class="accept" onclick="acceptOrder(this)">Accept</button>
+                <button class="reject" onclick="rejectOrder(this)">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add more sections for different services -->
+
+    <script>
+        function acceptOrder(button) {
+            button.parentNode.innerHTML = '<span class="tick">&#10004;</span>Accepted';
+        }
+
+        function rejectOrder(button) {
+            button.parentNode.innerHTML = '<span class="cross">&#10060;</span>Rejected';
+        }
+    </script>
+</body>
+</html>
